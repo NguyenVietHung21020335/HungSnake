@@ -44,13 +44,13 @@ void initSDL(SDL_Window* &window, SDL_Renderer* &gRenderer)
         logSDLError(cout, "SDL_Init", true);
 
     window = SDL_CreateWindow(WINDOW_TITLE.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-    //window = SDL_CreateWindow(WINDOW_TITLE.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_FULLSCREEN_DESKTOP);
+
 
     if (window == nullptr)
         logSDLError(cout, "CreateWindow", true);
 
     gRenderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-    //SDL_Renderer *gRenderer = SDL_CreateSoftwareRenderer(SDL_GetWindowSurface(window));
+
     if (gRenderer == nullptr)
         logSDLError(cout, "CreateRenderer", true);
 
