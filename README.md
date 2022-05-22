@@ -1,4 +1,4 @@
-2048
+#2048
 Game 2048 cổ điển
 Hướng dẫn cài đặt
 Cài đặt Codeblock và SDL2, SDL_image, SDL_ttf.
