@@ -4,7 +4,25 @@ ________________________________________
 
 
 *Hướng dẫn cài đặt
-•	Cài đặt Codeblock và SDL2, SDL_image.
+Cần thêm một số bước cài đặt thư viện để chạy chương trình bao gồm :MinGW-W64, SDL2 ,SDL2_image
+Link tải chương trình dịch : https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/7.3.0/threads-win32/seh/x86_64-7.3.0-release-win32-seh-rt_v5-rev0.7z/download
+Link tải thư viện:
+SDL2 : https://www.libsdl.org/release/SDL2-devel-2.0.20-mingw.tar.gz
+SDL2_image : https://www.libsdl.org/projects/SDL_image/ (Chọn phiên bản phù hợp với máy)
+
+Bước Setting:
+Đầu tiên mở "Environment Valiables" bằng cách tìm kiếm "Path"
+Sau đó chọn "Path" rồi add các đường dẫn đến file "bin" trong các file vừa tải . Vd: C:\software\sdl_image\x86_64-w64-mingw32\bin
+Với CodeBlocks:
+Vào Setting/Compile/Linker settings rồi dán "-lmingw32 -lSDL2main -lSDL2 -lSDL2_image " vào phần Other linker options
+
+Sau đó vào "Search directories" :
+
+Chọn "Compiler" :Add các đường dẫn đến "SDL2" . Vd: C:\software\SDL2-2.2.20\x86_64-w64-mingw32\include\SDL2 C:\software\sdl_image\x86_64-w64-mingw32\include\SDL2
+Chọn "Linker" : Add các đường dẫn đến "lib" (Tương tự như cách add như trên) *Xong thì bấm OK là hoàn thành xong bước set up đầu tiên
+Bấm chuột phải vào project rồi chọn "Build options" rồi làm các bước y như trên
+
+
 •	Chạy file project HungSnake.cbp
 
 
