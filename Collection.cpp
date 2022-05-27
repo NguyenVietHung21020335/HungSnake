@@ -21,6 +21,7 @@ void Collection::loadGamePictures()
     pictures.push_back(painter.loadTexture("vertical_node.jpg"));
     pictures.push_back(painter.loadTexture("horizontal_node.png"));
     pictures.push_back(painter.loadTexture("head_node.jpg"));
-    pictures.push_back(painter.loadTexture("af_picture.jpg"));
-
+    pictures.push_back(painter.loadTexture("af_picture1.jpg"));
+    pictures.push_back(painter.loadTexture("af_picture2.jpg"));
+    pictures.push_back(painter.loadTexture("af_picture3.jpg"));
 }

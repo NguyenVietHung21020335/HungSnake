@@ -211,10 +211,12 @@ void drawSnake(Painter& painter, int left, int top, vector<Position> pos)
         painter.createImage(texture, NULL, &dst);
     }
 }
-void drawAfPicture(Painter& painter, int left, int top)
+void drawAfPicture(Painter& painter, int left, int top, int currentScore)
 {
     SDL_Rect dst = { 0, 0, 900, 600 };
-    painter.createImage(collection->loadImage(AFPICTURE), NULL, &dst);
+    if (currentScore <500){painter.createImage(collection->loadImage(AFPICTURE1), NULL, &dst);}
+    if (currentScore >=500 && currentScore<=1500){painter.createImage(collection->loadImage(AFPICTURE2), NULL, &dst);}
+    if (currentScore >1500 ){painter.createImage(collection->loadImage(AFPICTURE3), NULL, &dst);}
 }
 
 
@@ -257,10 +259,11 @@ void renderGamePlay(Painter& painter, const PlayGround& playGround)
 
     SDL_RenderPresent(painter.getRenderer());
 }
-void renderGameOver(Painter& painter)
+
+void renderGameOver(Painter& painter, int currentScore)
 {
     painter.clearWithBgColor(WHITE_COLOR);
-    drawAfPicture( painter, 0, 0);
+    drawAfPicture( painter, 0, 0, currentScore);
     SDL_RenderPresent(painter.getRenderer());
 }
 
@@ -334,7 +337,8 @@ int main(int argc, char* argv[])
 
         //quitSDL(window, renderer);
         loadScore();
-        renderGameOver(painter);
+        int currentScore= getScore();
+        renderGameOver(painter, currentScore);
         if(clickEndMenu(window, gRenderer)){
                 close(window, gRenderer);
                 main(argc, argv);

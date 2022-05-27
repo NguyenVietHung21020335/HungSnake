@@ -16,7 +16,9 @@ enum PictureID
     VERTICAL_NODE,
     HORIZONTAL_NODE,
     HEAD_NODE,
-    AFPICTURE,
+    AFPICTURE1,
+    AFPICTURE2,
+    AFPICTURE3,
 };
 
 class Collection
