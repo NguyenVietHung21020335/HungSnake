@@ -15,26 +15,32 @@
 #include "Audio.h"
 #include "mySnake.h"
 
+
 using namespace std;
+
 
 const int SCREEN_WIDTH = 900;
 const int SCREEN_HEIGHT = 600;
 const string WINDOW_TITLE = "Hung's Snake";
-const string GAMEOVER_TITLE = "Snake Game";
 
 
 const int GROUND_WIDTH = 30;
 const int GROUND_HEIGHT = 20;
 const int CELL_SIZE = 30;
 
- double STEP_DELAY = 0.2;
+
 #define CLOCK_NOW chrono::system_clock::now
 typedef chrono::duration<double> ElapsedTime;
+
 
 const SDL_Rect* srcrect = nullptr;
 const SDL_Rect* dstrect = nullptr;
 
+
+double STEP_DELAY = 0.2;
+
 Collection* collection = nullptr; // global picture manager
+
 
 void logSDLError(ostream& os, const string &msg, bool fatal)
 {
@@ -90,7 +96,9 @@ float generateRandomNumber()
     return (float) rand() / RAND_MAX;
 }
 
-//Click
+
+
+//Click funtions
 bool clickStartMenu(SDL_Window* window, SDL_Renderer* gRenderer){
     SDL_Event e;
     while (true){
@@ -108,8 +116,8 @@ bool clickStartMenu(SDL_Window* window, SDL_Renderer* gRenderer){
 			}
 		}
     }
-
 }
+
 bool clickEndMenu(SDL_Window* window,    SDL_Renderer* gRenderer){
     SDL_Event e;
     while (true){
@@ -128,6 +136,29 @@ bool clickEndMenu(SDL_Window* window,    SDL_Renderer* gRenderer){
 			}
 		}
     }
+}
+
+int clickChooseSnake(SDL_Window* window, SDL_Renderer* gRenderer){
+    SDL_Event e;
+    while (true){
+        while(SDL_PollEvent(&e) != 0) {
+			if(e.type == SDL_QUIT) {
+                return 0;
+			} else if(e.type == SDL_MOUSEBUTTONDOWN) {
+
+                if (e.button.x >= 450 && e.button.x <= 900 && e.button.y >= 200 && e.button.y <= 320) {
+                    return 1;
+                }
+                if (e.button.x >= 450 && e.button.x <= 900 && e.button.y >= 330 && e.button.y <= 450 )  {
+                    return 2;
+                }
+                if (e.button.x >= 450 && e.button.x <= 900 && e.button.y >= 455 && e.button.y <= 580)  {
+                    return 3;
+                }
+			}
+		}
+    }
+
 }
 
 int clickChooseSpeed(SDL_Window* window, SDL_Renderer* gRenderer){
@@ -157,14 +188,19 @@ int clickChooseSpeed(SDL_Window* window, SDL_Renderer* gRenderer){
 }
 
 
-
-
-//Draw
+//Draw funtions
 void drawPrePicture(Painter& painter, int left, int top)
 {
     SDL_Rect dst = { 0, 0, 900, 600 };
     painter.createImage(collection->loadImage(PREPICTURE), NULL, &dst);
 }
+
+void drawSnakeOutfit(Painter& painter, int left, int top)
+{
+    SDL_Rect dst = { 0, 0, 900, 600 };
+    painter.createImage(collection->loadImage(SNAKEOUTFITPICTURE), NULL, &dst);
+}
+
 void drawLevelPicture(Painter& painter, int left, int top)
 {
     SDL_Rect dst = { 0, 0, 900, 600 };
@@ -176,6 +212,7 @@ void drawBackGround(Painter& painter, int left, int top)
     SDL_Rect dst = { 0, 0, 900, 600 };
     painter.createImage(collection->loadImage(BACKGROUND), NULL, &dst);
 }
+
 void drawVerticalLine(Painter& painter, int left, int top, int cells)
 {
     painter.setColor(WHITE_COLOR);
@@ -183,6 +220,7 @@ void drawVerticalLine(Painter& painter, int left, int top, int cells)
     painter.setPosition(left, top);
     painter.moveForward(cells * CELL_SIZE);
 }
+
 void drawHorizontalLine(Painter& painter, int left, int top, int cells)
 {
     painter.setColor(WHITE_COLOR);
@@ -190,27 +228,57 @@ void drawHorizontalLine(Painter& painter, int left, int top, int cells)
     painter.setPosition(left, top);
     painter.moveForward(cells * CELL_SIZE);
 }
+
 void drawFood(Painter& painter, int left, int top)
 {
     SDL_Rect dst = { left+1, top+1, CELL_SIZE-1, CELL_SIZE-1 };
     painter.createImage(collection->loadImage(FOOD), NULL, &dst);
 }
-void drawSnake(Painter& painter, int left, int top, vector<Position> pos)
+
+void drawSnake(Painter& painter, int left, int top, vector<Position> pos, int snakeOutfit)
 {
     for (int i = 0; i < pos.size(); i++) {
         SDL_Rect dst = { left+pos[i].x*CELL_SIZE+1, top+pos[i].y*CELL_SIZE+1, CELL_SIZE-2, CELL_SIZE-2 };
         SDL_Texture* texture = NULL;
-        if (i > 0) {
-            if (pos[i].y == pos[i-1].y)
-                texture = collection->loadImage(HORIZONTAL_NODE);
-            else
-                texture = collection->loadImage(VERTICAL_NODE);
-        } else { // snake's head
-            texture = collection->loadImage(HEAD_NODE);
+        if( snakeOutfit==1){
+            if (i > 0) {
+                if (pos[i].y == pos[i-1].y)
+                    texture = collection->loadImage(HORIZONTAL_NODE);
+                else
+                    texture = collection->loadImage(VERTICAL_NODE);
+            }
+            else { // snake's head
+                texture = collection->loadImage(HEAD_NODE);
+            }
+        }
+
+        if( snakeOutfit==2){
+            if (i > 0) {
+                if (pos[i].y == pos[i-1].y)
+                    texture = collection->loadImage(HORIZONTAL_NODE_1);
+                else
+                    texture = collection->loadImage(VERTICAL_NODE_1);
+            }
+            else { // snake's head
+                texture = collection->loadImage(HEAD_NODE);
+            }
+        }
+
+        if( snakeOutfit==3){
+            if (i > 0) {
+                if (pos[i].y == pos[i-1].y)
+                    texture = collection->loadImage(HORIZONTAL_NODE_2);
+                else
+                    texture = collection->loadImage(VERTICAL_NODE_2);
+            }
+            else { // snake's head
+                texture = collection->loadImage(HEAD_NODE);
+            }
         }
         painter.createImage(texture, NULL, &dst);
     }
 }
+
 void drawAfPicture(Painter& painter, int left, int top, int currentScore)
 {
     SDL_Rect dst = { 0, 0, 900, 600 };
@@ -218,6 +286,8 @@ void drawAfPicture(Painter& painter, int left, int top, int currentScore)
     if (currentScore >=500 && currentScore<=1500){painter.createImage(collection->loadImage(AFPICTURE2), NULL, &dst);}
     if (currentScore >1500 ){painter.createImage(collection->loadImage(AFPICTURE3), NULL, &dst);}
 }
+
+
 
 
 //Render
@@ -228,13 +298,22 @@ void renderSplashScreen(Painter& painter )
     SDL_RenderPresent(painter.getRenderer());
 
 }
+
+void renderSnakeOutfit(Painter& painter)
+{
+    painter.clearWithBgColor(WHITE_COLOR);
+    drawSnakeOutfit( painter, 0, 0);
+    SDL_RenderPresent(painter.getRenderer());
+}
+
 void renderGameLevel(Painter& painter)
 {
     painter.clearWithBgColor(WHITE_COLOR);
     drawLevelPicture( painter, 0, 0);
     SDL_RenderPresent(painter.getRenderer());
 }
-void renderGamePlay(Painter& painter, const PlayGround& playGround)
+
+void renderGamePlay(Painter& painter, const PlayGround& playGround, int snakeOutfit)
 {
     int top = 0, left = 0;
     int width = playGround.getWidth();
@@ -255,13 +334,14 @@ void renderGamePlay(Painter& painter, const PlayGround& playGround)
                 drawFood(painter, left+j*CELL_SIZE, top+i*CELL_SIZE);
 
     vector<Position> snakePositions = playGround.getSnakePositions();
-    drawSnake(painter, left, top, snakePositions);
+    drawSnake(painter, left, top, snakePositions, snakeOutfit);
 
     SDL_RenderPresent(painter.getRenderer());
 }
 
-void renderGameOver(Painter& painter, int currentScore)
+void renderGameOver(Painter& painter)
 {
+    int currentScore= getCurrentScore();
     painter.clearWithBgColor(WHITE_COLOR);
     drawAfPicture( painter, 0, 0, currentScore);
     SDL_RenderPresent(painter.getRenderer());
@@ -295,10 +375,18 @@ int main(int argc, char* argv[])
     Painter painter(window, gRenderer);
     collection = new Collection(painter);
 
-
     PlayGround playGround(GROUND_WIDTH, GROUND_HEIGHT);
     renderSplashScreen(painter);
     if(clickStartMenu(window, gRenderer)==1){
+        renderSnakeOutfit(painter);
+        int snakeOutfit =0;
+        switch (clickChooseSnake(window, gRenderer))
+        {
+            case 1: {    snakeOutfit =1; break;}
+            case 2: {    snakeOutfit =2; break;}
+            case 3: {    snakeOutfit =3; break;}
+            default : {break;}
+        }
         renderGameLevel(painter);
         switch (clickChooseSpeed(window, gRenderer))
         {
@@ -313,7 +401,7 @@ int main(int argc, char* argv[])
         srand(time(0));
         SDL_Event e;
         auto start = CLOCK_NOW();
-        renderGamePlay(painter, playGround);
+        renderGamePlay(painter, playGround, snakeOutfit);
         Mix_ResumeMusic();
         loadMusic((char*)"backgroundMusic.mp3");
         while (playGround.isGameRunning()) {
@@ -326,7 +414,7 @@ int main(int argc, char* argv[])
             ElapsedTime elapsed = end-start;
             if (elapsed.count() > STEP_DELAY) {
                 playGround.nextStep();
-                renderGamePlay(painter, playGround);
+                renderGamePlay(painter, playGround, snakeOutfit);
                 start = end;
             }
             SDL_Delay(1);
@@ -337,8 +425,8 @@ int main(int argc, char* argv[])
 
         //quitSDL(window, renderer);
         loadScore();
-        int currentScore= getScore();
-        renderGameOver(painter, currentScore);
+
+        renderGameOver(painter);
         if(clickEndMenu(window, gRenderer)){
                 close(window, gRenderer);
                 main(argc, argv);

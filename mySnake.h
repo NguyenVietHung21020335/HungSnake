@@ -64,7 +64,7 @@ private:
     Direction changeDirection(UserKeyboardInput input);//Thay đổi điều hướng
     void changePlayGroundState(CellType type);//Thay đổi trạng thái sân
 };
-
+int getCurrentScore();
 int getScore();
 void resetScore();
 vector<int> getArrScore();

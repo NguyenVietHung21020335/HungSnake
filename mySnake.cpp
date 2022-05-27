@@ -6,6 +6,7 @@
 using namespace std;
 
 vector<int> Arr;
+
 int score=0;
 
 //Khởi tạo rắn
@@ -107,6 +108,12 @@ bool Snake::checkPosition(Position pos)  //kiểm tra xem có bị ra ngoài sâ
         if (p->position == pos) return false;
 
     return true;
+}
+
+int getCurrentScore()
+{
+    int currentScore=score;
+    return currentScore;
 }
 int getScore()
 {
