@@ -27,7 +27,7 @@ const int GROUND_WIDTH = 30;
 const int GROUND_HEIGHT = 20;
 const int CELL_SIZE = 30;
 
-const double STEP_DELAY = 0.2;
+ double STEP_DELAY = 0.2;
 #define CLOCK_NOW chrono::system_clock::now
 typedef chrono::duration<double> ElapsedTime;
 
@@ -99,10 +99,10 @@ bool clickStartMenu(SDL_Window* window, SDL_Renderer* gRenderer){
 				close(window, gRenderer);
 				exit(0);
 			} else if(e.type == SDL_MOUSEBUTTONDOWN) {
-                if (e.button.x >= 0 && e.button.x <= 600 && e.button.y >= 200 && e.button.y <= 350) {
+                if (e.button.x >= 200 && e.button.x <= 700 && e.button.y >= 180 && e.button.y <= 360) {
                     return true;
                 }
-                if (e.button.x >= 0 && e.button.x <= 600 && e.button.y >= 450 && e.button.y <= 550)  {
+                if (e.button.x >= 300 && e.button.x <= 600 && e.button.y >= 400 && e.button.y <= 550)  {
                     return false;
                 }
 			}
@@ -130,6 +130,33 @@ bool clickEndMenu(SDL_Window* window,    SDL_Renderer* gRenderer){
     }
 }
 
+int clickChooseSpeed(SDL_Window* window, SDL_Renderer* gRenderer){
+    SDL_Event e;
+    while (true){
+        while(SDL_PollEvent(&e) != 0) {
+			if(e.type == SDL_QUIT) {
+                return 0;
+			} else if(e.type == SDL_MOUSEBUTTONDOWN) {
+
+                if (e.button.x >= 450 && e.button.x <= 900 && e.button.y >= 160 && e.button.y <= 270) {
+                    return 1;
+                }
+                if (e.button.x >= 450 && e.button.x <= 900 && e.button.y >= 281 && e.button.y <= 380)  {
+                    return 2;
+                }
+                                if (e.button.x >= 450 && e.button.x <= 900 && e.button.y >= 381 && e.button.y <= 500)  {
+                    return 3;
+                }
+                if (e.button.x >= 450 && e.button.x <= 900 && e.button.y >= 501 && e.button.y <= 590 )  {
+                    return 4;
+                }
+			}
+		}
+    }
+
+}
+
+
 
 
 //Draw
@@ -138,6 +165,12 @@ void drawPrePicture(Painter& painter, int left, int top)
     SDL_Rect dst = { 0, 0, 900, 600 };
     painter.createImage(collection->loadImage(PREPICTURE), NULL, &dst);
 }
+void drawLevelPicture(Painter& painter, int left, int top)
+{
+    SDL_Rect dst = { 0, 0, 900, 600 };
+    painter.createImage(collection->loadImage(LEVELPICTURE), NULL, &dst);
+}
+
 void drawBackGround(Painter& painter, int left, int top)
 {
     SDL_Rect dst = { 0, 0, 900, 600 };
@@ -192,6 +225,12 @@ void renderSplashScreen(Painter& painter )
     drawPrePicture( painter, 0, 0);
     SDL_RenderPresent(painter.getRenderer());
 
+}
+void renderGameLevel(Painter& painter)
+{
+    painter.clearWithBgColor(WHITE_COLOR);
+    drawLevelPicture( painter, 0, 0);
+    SDL_RenderPresent(painter.getRenderer());
 }
 void renderGamePlay(Painter& painter, const PlayGround& playGround)
 {
@@ -256,9 +295,17 @@ int main(int argc, char* argv[])
 
     PlayGround playGround(GROUND_WIDTH, GROUND_HEIGHT);
     renderSplashScreen(painter);
+    if(clickStartMenu(window, gRenderer)==1){
+        renderGameLevel(painter);
+        switch (clickChooseSpeed(window, gRenderer))
+        {
+            case 1: {   STEP_DELAY =0.35; break;}
+            case 2: {   STEP_DELAY =0.25; break;}
+            case 3: {   STEP_DELAY =0.15; break;}
+            case 4: {   STEP_DELAY =0.1; break;}
+            default : {break;}
+        }
 
-    if(clickStartMenu(window, gRenderer)==1)
-    {
         resetScore();
         srand(time(0));
         SDL_Event e;
@@ -284,6 +331,7 @@ int main(int argc, char* argv[])
         Mix_HaltMusic();
         loadChunk("gameOver.wav");
         SDL_Delay(1000);
+
         //quitSDL(window, renderer);
         loadScore();
         renderGameOver(painter);

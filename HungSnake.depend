@@ -394,10 +394,10 @@
 	<string>
 	<SDL.h>
 
-1653610781 source:c:\users\nguyen viet hung\desktop\hungsnake\collection.cpp
+1653631011 source:c:\users\nguyen viet hung\desktop\hungsnake\collection.cpp
 	"Collection.h"
 
-1653233190 c:\users\nguyen viet hung\desktop\hungsnake\collection.h
+1653631011 c:\users\nguyen viet hung\desktop\hungsnake\collection.h
 	<vector>
 	<SDL.h>
 	"painter.h"
@@ -424,7 +424,7 @@
 	<cstdlib>
 	"PlayGround.h"
 
-1653624961 source:c:\users\nguyen viet hung\desktop\hungsnake\main.cpp
+1653633469 source:c:\users\nguyen viet hung\desktop\hungsnake\main.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -442,7 +442,7 @@
 
 1653233190 c:\users\nguyen viet hung\desktop\hungsnake\position.h
 
-1653603824 source:c:\users\nguyen viet hung\desktop\hungsnake\audio.cpp
+1653626979 source:c:\users\nguyen viet hung\desktop\hungsnake\audio.cpp
 	"Audio.h"
 
 1653603803 c:\users\nguyen viet hung\desktop\hungsnake\audio.h

@@ -10,6 +10,7 @@ using namespace std;
 enum PictureID
 {
     PREPICTURE,
+    LEVELPICTURE,
     BACKGROUND,
     FOOD,
     VERTICAL_NODE,

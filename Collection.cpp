@@ -15,6 +15,7 @@ Collection::~Collection()
 void Collection::loadGamePictures()
 {
     pictures.push_back(painter.loadTexture("pre_picture.jpg"));
+    pictures.push_back(painter.loadTexture("level_picture.jpg"));
     pictures.push_back(painter.loadTexture("back_ground.jpg"));
     pictures.push_back(painter.loadTexture("food.jpg"));
     pictures.push_back(painter.loadTexture("vertical_node.jpg"));
