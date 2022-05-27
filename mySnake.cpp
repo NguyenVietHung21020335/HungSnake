@@ -1,7 +1,12 @@
 #include "mySnake.h"
 #include "PlayGround.h"
+#include "Audio.h"
+
 
 using namespace std;
+
+vector<int> Arr;
+int score=0;
 
 //Khởi tạo rắn
 Snake::Snake(PlayGround* playGround)
@@ -10,7 +15,7 @@ Snake::Snake(PlayGround* playGround)
             ) ),
       playGround(playGround),
       direction(Direction::RIGHT),
-      cherry(0)
+      food(0)
 {
     changePlayGroundState(CELL_SNAKE); //Thay đổi trạng thái ở ô này: CELL_SNAKE
 }
@@ -61,10 +66,13 @@ void Snake::nextStep()
     CellType type = playGround->getCellState(newPosition); // Hàm lấy trạng thái ô vuông sắp đi tới
 
     changePlayGroundState(CELL_EMPTY);
+
     //Thêm một đốt nếu vừa ăn cherry
-    if (cherry > 0)
+    if (food > 0)
     {
-        cherry--;
+
+
+        food--;
         head = new SnakeNode(newPosition, head);
     } else {  // Trường hợp không ăn, trườn lên phía trước,
         for (SnakeNode* p = head; p != nullptr; p = p->next) {
@@ -75,7 +83,9 @@ void Snake::nextStep()
     //đánh dấu đã ăn cherry
     if (type == CELL_FOOD) //nếu cái vị trí mới chứa cherry thì nó gọi hàm addCherry trong lớp playground để tạo quả mới
     {
-        cherry++;
+        score+=100;
+        loadChunk("eatingSound.wav");
+        food++;
         playGround->addCherry();
     }
 }
@@ -97,4 +107,17 @@ bool Snake::checkPosition(Position pos)  //kiểm tra xem có bị ra ngoài sâ
         if (p->position == pos) return false;
 
     return true;
+}
+int getScore()
+{
+    Arr.push_back(score);
+    return score;
+}
+void resetScore()
+{
+    score=0;
+}
+vector<int> getArrScore()
+{
+    return Arr;
 }

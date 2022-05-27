@@ -144,7 +144,7 @@ void loadHighScore()
         }
 
     }
-    SDL_Delay(5000);
+    SDL_Delay(3000);
 
 	//Destroy a window.
 	SDL_DestroyWindow(window);

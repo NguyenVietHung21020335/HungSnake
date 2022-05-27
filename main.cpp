@@ -6,15 +6,22 @@
 #include <SDL.h>
 #include <SDL_image.h>
 
+
 #include "painter.h"
 #include "PlayGround.h"
 #include "Collection.h"
+#include "Score.h"
+#include "HighScore.h"
+#include "Audio.h"
+#include "mySnake.h"
 
 using namespace std;
 
 const int SCREEN_WIDTH = 900;
 const int SCREEN_HEIGHT = 600;
 const string WINDOW_TITLE = "Hung's Snake";
+const string GAMEOVER_TITLE = "Snake Game";
+
 
 const int GROUND_WIDTH = 30;
 const int GROUND_HEIGHT = 20;
@@ -44,13 +51,13 @@ void initSDL(SDL_Window* &window, SDL_Renderer* &gRenderer)
         logSDLError(cout, "SDL_Init", true);
 
     window = SDL_CreateWindow(WINDOW_TITLE.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-
+    //window = SDL_CreateWindow(WINDOW_TITLE.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_FULLSCREEN_DESKTOP);
 
     if (window == nullptr)
         logSDLError(cout, "CreateWindow", true);
 
     gRenderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-
+    //SDL_Renderer *gRenderer = SDL_CreateSoftwareRenderer(SDL_GetWindowSurface(window));
     if (gRenderer == nullptr)
         logSDLError(cout, "CreateRenderer", true);
 
@@ -62,6 +69,7 @@ void close(SDL_Window* window, SDL_Renderer* gRenderer)
 {
 	SDL_DestroyRenderer(gRenderer);
 	SDL_DestroyWindow(window);
+	TTF_Quit();
 	IMG_Quit();
 	SDL_Quit();
 }
@@ -95,8 +103,7 @@ bool clickStartMenu(SDL_Window* window, SDL_Renderer* gRenderer){
                     return true;
                 }
                 if (e.button.x >= 0 && e.button.x <= 600 && e.button.y >= 450 && e.button.y <= 550)  {
-                    close(window, gRenderer);
-                    exit(0);
+                    return false;
                 }
 			}
 		}
@@ -157,7 +164,7 @@ void drawFood(Painter& painter, int left, int top)
 }
 void drawSnake(Painter& painter, int left, int top, vector<Position> pos)
 {
-    for (size_t i = 0; i < pos.size(); i++) {
+    for (int i = 0; i < pos.size(); i++) {
         SDL_Rect dst = { left+pos[i].x*CELL_SIZE+1, top+pos[i].y*CELL_SIZE+1, CELL_SIZE-2, CELL_SIZE-2 };
         SDL_Texture* texture = NULL;
         if (i > 0) {
@@ -238,6 +245,7 @@ UserKeyboardInput interpretEvent(SDL_Event e)
 
 int main(int argc, char* argv[])
 {
+    Mix_ResumeMusic();
     srand(time(0));
     SDL_Window* window;
     SDL_Renderer* gRenderer;
@@ -251,9 +259,13 @@ int main(int argc, char* argv[])
 
     if(clickStartMenu(window, gRenderer)==1)
     {
+        resetScore();
+        srand(time(0));
         SDL_Event e;
         auto start = CLOCK_NOW();
         renderGamePlay(painter, playGround);
+        Mix_ResumeMusic();
+        loadMusic((char*)"backgroundMusic.mp3");
         while (playGround.isGameRunning()) {
             while (SDL_PollEvent(&e)) {
                 UserKeyboardInput input = interpretEvent(e);
@@ -269,13 +281,23 @@ int main(int argc, char* argv[])
             }
             SDL_Delay(1);
         }
+        Mix_HaltMusic();
+        loadChunk("gameOver.wav");
+        SDL_Delay(1000);
+        //quitSDL(window, renderer);
+        loadScore();
         renderGameOver(painter);
         if(clickEndMenu(window, gRenderer)){
                 close(window, gRenderer);
                 main(argc, argv);
-
         }
     }
+    else if(clickStartMenu(window, gRenderer)==0)
+    {
+        loadHighScore();
+        main(argc, argv);
+    }
+
     delete collection;
     close(window, gRenderer);
     return 0;

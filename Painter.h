@@ -11,10 +11,16 @@ const SDL_Color ORANGE_COLOR = {255, 165, 0};
 const SDL_Color YELLOW_COLOR = {255, 255, 0};
 const SDL_Color LIME_COLOR = {0, 255, 0};
 const SDL_Color PURPLE_COLOR = {128, 0, 128};
-const SDL_Color RED_COLOR = {255, 0, 0};
+const SDL_Color RED_COLOR = {229, 70, 70};
 const SDL_Color WHITE_COLOR = {255, 255, 255};
 const SDL_Color BLACK_COLOR = {0, 0, 0};
 const SDL_Color GREEN_COLOR = {0, 128, 0};
+const SDL_Color AntiqueWhite_COLOR= {250, 235 ,215};
+const SDL_Color Aquamarine1_COLOR = {0,238,0};
+const SDL_Color GRAY_COLOR = {211,211,211};
+const SDL_Color INDIANRED1_COLOR = {255,106,106};
+const SDL_Color LIGHTSEAGREEN_COLOR = {32,178,170};
+const SDL_Color MEDIUMPURPLE3_COLOR = {137,104,205};
 
 const SDL_Color DEFAULT_COLOR = BLACK_COLOR;
 

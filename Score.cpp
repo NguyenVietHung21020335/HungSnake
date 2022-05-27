@@ -111,6 +111,6 @@ int loadScore()
 	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
 	TTF_Quit();
-	//SDL_Quit();
+	//SDL_Quit(); //quit ở đây là renderGameover k chạy luôn
 
 }

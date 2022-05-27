@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <vector>
 #include <algorithm>
-using namespace std;
+
 
 int loadMusic(const char* filename);
 int loadChunk(const char* filename);

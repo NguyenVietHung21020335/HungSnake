@@ -390,11 +390,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1653233190 c:\users\nguyen viet hung\desktop\hungsnake\painter.h
+1653468832 c:\users\nguyen viet hung\desktop\hungsnake\painter.h
 	<string>
 	<SDL.h>
 
-1653214102 source:c:\users\nguyen viet hung\desktop\hungsnake\collection.cpp
+1653610781 source:c:\users\nguyen viet hung\desktop\hungsnake\collection.cpp
 	"Collection.h"
 
 1653233190 c:\users\nguyen viet hung\desktop\hungsnake\collection.h
@@ -402,11 +402,12 @@
 	<SDL.h>
 	"painter.h"
 
-1653233497 source:c:\users\nguyen viet hung\desktop\hungsnake\mysnake.cpp
+1653610626 source:c:\users\nguyen viet hung\desktop\hungsnake\mysnake.cpp
 	"mySnake.h"
 	"PlayGround.h"
+	"Audio.h"
 
-1653233190 c:\users\nguyen viet hung\desktop\hungsnake\mysnake.h
+1653591250 c:\users\nguyen viet hung\desktop\hungsnake\mysnake.h
 	<queue>
 	"Position.h"
 
@@ -423,7 +424,7 @@
 	<cstdlib>
 	"PlayGround.h"
 
-1653234326 source:c:\users\nguyen viet hung\desktop\hungsnake\main.cpp
+1653624961 source:c:\users\nguyen viet hung\desktop\hungsnake\main.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -434,6 +435,90 @@
 	"painter.h"
 	"PlayGround.h"
 	"Collection.h"
+	"Score.h"
+	"HighScore.h"
+	"Audio.h"
+	"mySnake.h"
 
 1653233190 c:\users\nguyen viet hung\desktop\hungsnake\position.h
+
+1653603824 source:c:\users\nguyen viet hung\desktop\hungsnake\audio.cpp
+	"Audio.h"
+
+1653603803 c:\users\nguyen viet hung\desktop\hungsnake\audio.h
+	<SDL.h>
+	<SDL_mixer.h>
+	<stdio.h>
+	<vector>
+	<algorithm>
+
+1540998018 c:\users\nguyen viet hung\desktop\dohoa\sdl2_mixer-2.0.4\x86_64-w64-mingw32\include\sdl2\sdl_mixer.h
+	"SDL_stdinc.h"
+	"SDL_rwops.h"
+	"SDL_audio.h"
+	"SDL_endian.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1653596220 source:c:\users\nguyen viet hung\desktop\hungsnake\text.cpp
+	<stdio.h>
+	<SDL.h>
+	<SDL_ttf.h>
+	<string>
+	<sstream>
+	"Text.h"
+	"mySnake.h"
+
+1641928995 c:\users\nguyen viet hung\desktop\dohoa\sdl2_ttf-2.0.18\x86_64-w64-mingw32\include\sdl2\sdl_ttf.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
+
+1653453986 c:\users\nguyen viet hung\desktop\hungsnake\text.h
+	<stdio.h>
+	<SDL.h>
+	<SDL_ttf.h>
+	<string>
+	"painter.h"
+
+1653609884 source:c:\users\nguyen viet hung\desktop\hungsnake\highscore.cpp
+	<stdio.h>
+	<SDL.h>
+	<SDL_ttf.h>
+	<string>
+	<vector>
+	<sstream>
+	<algorithm>
+	"Painter.h"
+	"mySnake.h"
+	"iostream"
+
+1653596366 c:\users\nguyen viet hung\desktop\hungsnake\highscore.h
+	<stdio.h>
+	<SDL.h>
+	<SDL_ttf.h>
+	<string>
+	<vector>
+	<sstream>
+	<algorithm>
+	"Painter.h"
+	"mySnake.h"
+	"iostream"
+
+1653592832 c:\users\nguyen viet hung\desktop\hungsnake\score.h
+	<stdio.h>
+	<SDL.h>
+	<SDL_ttf.h>
+	<string>
+	"painter.h"
+
+1653601994 source:c:\users\nguyen viet hung\desktop\hungsnake\score.cpp
+	<stdio.h>
+	<SDL.h>
+	<SDL_ttf.h>
+	<string>
+	<sstream>
+	"Score.h"
+	"mySnake.h"
 

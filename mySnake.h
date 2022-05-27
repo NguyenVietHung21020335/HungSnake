@@ -48,7 +48,7 @@ class Snake
     Direction direction;
     queue<UserKeyboardInput> inputQueue;// Hàng đợi kiểu dữ liệu "UserInput" tên inputQueue
 
-    int cherry;
+    int food;
 public:
     Snake(PlayGround* playGround);
     ~Snake();
@@ -64,6 +64,10 @@ private:
     Direction changeDirection(UserKeyboardInput input);//Thay đổi điều hướng
     void changePlayGroundState(CellType type);//Thay đổi trạng thái sân
 };
+
+int getScore();
+void resetScore();
+vector<int> getArrScore();
 
 #endif // MYSNAKE_H_INCLUDED
 
