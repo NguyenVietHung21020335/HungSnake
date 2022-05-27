@@ -8,9 +8,8 @@
 #include <string>
 #include "painter.h"
 
+
 int loadScore();
-
-
 
 
 #endif // SCORE_H_INCLUDED

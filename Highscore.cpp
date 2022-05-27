@@ -12,9 +12,9 @@
 using namespace std;
 
 const int HIGHSCORE_WIDTH = 600 ;
-const int HIGHSCORE_LENGTH = 400 ;
+const int HIGHSCORE_HEIGHT= 400 ;
 const int posX = 280;
-const int distanceY = 40;
+const int posY = 40;
 
 #undef main
 bool comp(const int a, const int b){
@@ -22,7 +22,7 @@ bool comp(const int a, const int b){
 }
 void loadHighScore()
 {
-    std::vector<int> ArrScore=getArrScore();
+    vector<int> ArrScore=getArrScore();
     /*ifstream file;
     file.open("HighScore.txt");
     int x;
@@ -52,7 +52,7 @@ void loadHighScore()
 	}
 
 	//Create window
-	window = SDL_CreateWindow("HighScore", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, HIGHSCORE_WIDTH, HIGHSCORE_LENGTH, SDL_WINDOW_SHOWN);
+	window = SDL_CreateWindow("HighScore", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, HIGHSCORE_WIDTH, HIGHSCORE_HEIGHT, SDL_WINDOW_SHOWN);
 	if (window == NULL)
 	{
 		printf("Could not create window %s", SDL_GetError());
@@ -65,14 +65,14 @@ void loadHighScore()
 		printf("Could not create render %s", SDL_GetError());
 	}
 	Painter painter(window, renderer);
-    painter.clearWithBgColor(RED_COLOR);
+    painter.clearWithBgColor(CYAN_COLOR );
 
     for(int i=0;i<=ArrScore.size();i++){
         font = TTF_OpenFont("mono0755.ttf", 20);
-        SDL_Color fg = { 255, 255, 255};
+        SDL_Color fg = MEDIUMPURPLE3_COLOR;
         bool isRunning = true;
-        std::stringstream ss;
-        std::string text;
+        stringstream ss;
+        string text;
         if(i==0){
             ss<<"HIGHSCORE";
             getline(ss,text);
@@ -98,7 +98,7 @@ void loadHighScore()
         srcRest.y = 0;
 
         desRect.x = posX;
-        desRect.y = i*distanceY;
+        desRect.y = i*posY;
         if(i==0) desRect.x=210;
         desRect.w = srcRest.w;
         desRect.h = srcRest.h;
@@ -144,7 +144,7 @@ void loadHighScore()
         }
 
     }
-    SDL_Delay(3000);
+    SDL_Delay(2500);
 
 	//Destroy a window.
 	SDL_DestroyWindow(window);

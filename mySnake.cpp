@@ -115,15 +115,18 @@ int getCurrentScore()
     int currentScore=score;
     return currentScore;
 }
+
 int getScore()
 {
     Arr.push_back(score);
     return score;
 }
+
 void resetScore()
 {
     score=0;
 }
+
 vector<int> getArrScore()
 {
     return Arr;

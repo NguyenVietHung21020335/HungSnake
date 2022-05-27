@@ -398,20 +398,17 @@
 	"Collection.h"
 	"Collection.h"
 
-1653650761 c:\users\nguyen viet hung\desktop\hungsnake\collection.h
-	<vector>
-	<SDL.h>
-	"painter.h"
+1653669137 c:\users\nguyen viet hung\desktop\hungsnake\collection.h
 	<vector>
 	<SDL.h>
 	"painter.h"
 
-1653646527 source:c:\users\nguyen viet hung\desktop\hungsnake\mysnake.cpp
+1653670435 source:c:\users\nguyen viet hung\desktop\hungsnake\mysnake.cpp
 	"mySnake.h"
 	"PlayGround.h"
 	"Audio.h"
 
-1653646527 c:\users\nguyen viet hung\desktop\hungsnake\mysnake.h
+1653669137 c:\users\nguyen viet hung\desktop\hungsnake\mysnake.h
 	<queue>
 	"Position.h"
 
@@ -486,7 +483,7 @@
 	<string>
 	"painter.h"
 
-1653609884 source:c:\users\nguyen viet hung\desktop\hungsnake\highscore.cpp
+1653670601 source:c:\users\nguyen viet hung\desktop\hungsnake\highscore.cpp
 	<stdio.h>
 	<SDL.h>
 	<SDL_ttf.h>
@@ -510,14 +507,14 @@
 	"mySnake.h"
 	"iostream"
 
-1653592832 c:\users\nguyen viet hung\desktop\hungsnake\score.h
+1653669137 c:\users\nguyen viet hung\desktop\hungsnake\score.h
 	<stdio.h>
 	<SDL.h>
 	<SDL_ttf.h>
 	<string>
 	"painter.h"
 
-1653601994 source:c:\users\nguyen viet hung\desktop\hungsnake\score.cpp
+1653670227 source:c:\users\nguyen viet hung\desktop\hungsnake\score.cpp
 	<stdio.h>
 	<SDL.h>
 	<SDL_ttf.h>

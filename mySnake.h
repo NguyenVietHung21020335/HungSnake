@@ -64,10 +64,11 @@ private:
     Direction changeDirection(UserKeyboardInput input);//Thay đổi điều hướng
     void changePlayGroundState(CellType type);//Thay đổi trạng thái sân
 };
-int getCurrentScore();
-int getScore();
+int getCurrentScore();  //Lấy điểm màn hiện tại để render ảnh phù hợp
+int getScore(); //Lấy ảnh cho vào mảng Arr
 void resetScore();
-vector<int> getArrScore();
+vector<int> getArrScore(); //Nhận giá trị từ mảng
+
 
 #endif // MYSNAKE_H_INCLUDED
 
