@@ -1,5 +1,5 @@
 *Snake
-*Game Snake cổ điển
+**Game Snake cổ điển
 ________________________________________
 
 
