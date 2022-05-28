@@ -67,7 +67,7 @@ IV. Kỹ thuật lập trình đã sử dụng
 •	Sinh số ngẫu nhiên
 •	Các thư viện chuẩn của C++
 •	Tách file và quản lý file trong project
-
+ 
 V. Kết luận 
 •	Hướng phát triển: Em sẽ cải tiến thêm các tuỳ chọn như :
 o	Có bảng hướng dẫn chơi
