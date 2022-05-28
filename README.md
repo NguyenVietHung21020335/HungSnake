@@ -2,8 +2,11 @@ Báo cáo bài tập lớn cuối kì
 ________________________________________
 
 *Snake 
+
+________________________________________
+
 ![283347832_384217400428472_1744458736183251533_n](https://user-images.githubusercontent.com/100114976/170826676-faac3b91-0883-42a9-81d3-d2b2383bd258.jpg)
-*Game Snake cổ điển
+
 ________________________________________
 
 I. Hướng dẫn cài đặt:
@@ -21,12 +24,16 @@ I. Hướng dẫn cài đặt:
 	  - SDL2_ttf : https://www.libsdl.org/projects/SDL_ttf/release/ (Chọn phiên bản phù hợp với máy và dành cho nhà phát triển). Ưu tiên chọn bản mới nhất, ví dụ: SDL2_ttf-devel-2.0.18-mingw.tar.gz
 * Thiết lập:
 	 + Giải nén các tệp thư viện, tìm mục “bin” trong các folder thư viện, copy đường dẫn.
-	 + Mở "Environment Valiables", nháy đúp chuột vào mục “Path”, ấn “New” và thêm đường dẫn vào các folder “bin” vào. Ví dụ: C:\Users\NGUYEN VIET HUNG\Desktop\DoHoa\SDL2-2.0.20\x86_64-w64-mingw32\bin. Ảnh minh họa:   ![image](https://user-images.githubusercontent.com/100114976/170826365-cc1556aa-eab9-4116-8723-68e5ffcec529.png)
+	 + Mở "Environment Valiables", nháy đúp chuột vào mục “Path”, ấn “New” và thêm đường dẫn vào các folder “bin” vào. Ví dụ: C:\Users\NGUYEN VIET HUNG\Desktop\DoHoa\SDL2-2.0.20\x86_64-w64-mingw32\bin. 
+	 + Ảnh minh họa: ![image](https://user-images.githubusercontent.com/100114976/170826365-cc1556aa-eab9-4116-8723-68e5ffcec529.png)
 
 * Trong Codeblocks:
-	 + Vào Setting/Compile/Linker settings rồi dán "-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf" vào phần Other linker options. Ảnh minh họa:   ![image](https://user-images.githubusercontent.com/100114976/170826273-6b8a51d0-750e-4e7b-9ed6-eacd052ddcdd.png)
-	 + Vào Setting/Compile/Search directories/Complier. Nhấn add và thêm các thư mục “SDL2”.  Ảnh minh họa:   ![image](https://user-images.githubusercontent.com/100114976/170826284-b614a486-cbae-4864-922d-7d75a0c0246d.png)
-	 + Vào Setting/Compile/Search directories/Linker. Nhấn add và thêm các thư mục “lib”.  Ảnh minh họa:   ![image](https://user-images.githubusercontent.com/100114976/170826294-b6f7447e-54c3-44b7-a009-b3c28a6ae264.png)
+	 + Vào Setting/Compile/Linker settings rồi dán "-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf" vào phần Other linker options.
+	 +  Ảnh minh họa:   ![image](https://user-images.githubusercontent.com/100114976/170826273-6b8a51d0-750e-4e7b-9ed6-eacd052ddcdd.png)
+	 + Vào Setting/Compile/Search directories/Complier. Nhấn add và thêm các thư mục “SDL2”.  
+	 + Ảnh minh họa:   ![image](https://user-images.githubusercontent.com/100114976/170826284-b614a486-cbae-4864-922d-7d75a0c0246d.png)
+	 + Vào Setting/Compile/Search directories/Linker. Nhấn add và thêm các thư mục “lib”. 
+	 +  Ảnh minh họa:   ![image](https://user-images.githubusercontent.com/100114976/170826294-b6f7447e-54c3-44b7-a009-b3c28a6ae264.png)
 	 + Nhấn OK để lưu.
 	 + Vào folder chứa Project đã giải nén mở file HungSnake.cbp để chạy project.
 	 + Nhấn chuột phải vào Project chọn “Build option” và tương tự trong setting của Codeblocks. Ảnh minh họa:   ![image](https://user-images.githubusercontent.com/100114976/170826317-e971be78-3cea-4108-8978-9767e0ccffdb.png)
