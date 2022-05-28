@@ -7,10 +7,10 @@ ________________________________________
 
 
 I. Hướng dẫn cài đặt:
-    1.	Đối với hệ thống 64 bit:
-        + Tải Project “Hung’s snake” từ github :
-            - Nhấn vào “Code” màu xanh, nhấp chọn “Download ZIP” để tải project về. 
-            -	Giải nén tệp vừa tải.
+1.	Đối với hệ thống 64 bit:
++ Tải Project “Hung’s snake” từ github https://github.com/NguyenVietHung21020335/HungSnake:
+- Nhấn vào “Code” màu xanh, nhấp chọn “Download ZIP” để tải project về. 
+-	Giải nén tệp vừa tải.
 
 
         + Cài đặt:
