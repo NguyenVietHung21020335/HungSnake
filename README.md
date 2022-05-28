@@ -13,7 +13,7 @@ I.Hướng dẫn cài đặt:
             •	Giải nén tệp vừa tải.
 
 
-  (2)	Cài đặt
+        b.	Cài đặt:
     •	Cài đặt CodeBlock: 
       o	Nhấn vào đường dẫn này và cài đặt  trình biên dịch Codeblocks: https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/7.3.0/threads-win32/seh/x86_64-7.3.0-release-win32-seh-rt_v5-rev0.7z/download
     •	Cài đặt thư viện: 
