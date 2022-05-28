@@ -2,25 +2,25 @@ Báo cáo bài tập lớn cuối kì
 ________________________________________
 
 *Snake 
-*Game Snake cổ điển
+  *Game Snake cổ điển
 ________________________________________
 
 
 I.Hướng dẫn cài đặt
-1.	Đối với hệ thống 64 bit
-(1)	Tải Project “Hung’s snake” từ github https://github.com/NguyenVietHung21020335/HungSnake
-•	Nhấn vào “Code” màu xanh, nhấp chọn “Download ZIP” để tải project về. 
-•	Giải nén tệp vừa tải.
+  1.	Đối với hệ thống 64 bit
+  (1)	Tải Project “Hung’s snake” từ github https://github.com/NguyenVietHung21020335/HungSnake
+    •	Nhấn vào “Code” màu xanh, nhấp chọn “Download ZIP” để tải project về. 
+    •	Giải nén tệp vừa tải.
 
 
-(2)	Cài đặt
-•	Cài đặt CodeBlock: 
-o	Nhấn vào đường dẫn này và cài đặt  trình biên dịch Codeblocks: https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/7.3.0/threads-win32/seh/x86_64-7.3.0-release-win32-seh-rt_v5-rev0.7z/download
-•	Cài đặt thư viện: 
-o	SDL : https://www.libsdl.org/release/SDL2-devel-2.0.20-mingw.tar.gz
-o	SDL2_image : https://www.libsdl.org/projects/SDL_image/ (Chọn phiên bản phù hợp với máy và dành cho nhà phát triển). Ví dụ: SDL2_image-devel-2.0.5-mingw.tar.gz
-o	SDL2_mixer : https://www.libsdl.org/projects/SDL_mixer/ (Chọn phiên bản phù hợp với máy và dành cho nhà phát triển). Ví dụ:   SDL2_mixer-devel-2.0.4-mingw.tar.gz
-o	SDL2_ttf : https://www.libsdl.org/projects/SDL_ttf/release/ (Chọn phiên bản phù hợp với máy và dành cho nhà phát triển). Ưu tiên chọn bản mới nhất, ví dụ:
+  (2)	Cài đặt
+    •	Cài đặt CodeBlock: 
+      o	Nhấn vào đường dẫn này và cài đặt  trình biên dịch Codeblocks: https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/7.3.0/threads-win32/seh/x86_64-7.3.0-release-win32-seh-rt_v5-rev0.7z/download
+    •	Cài đặt thư viện: 
+      o	SDL : https://www.libsdl.org/release/SDL2-devel-2.0.20-mingw.tar.gz
+      o	SDL2_image : https://www.libsdl.org/projects/SDL_image/ (Chọn phiên bản phù hợp với máy và dành cho nhà phát triển). Ví dụ: SDL2_image-devel-2.0.5-mingw.tar.gz
+      o	SDL2_mixer : https://www.libsdl.org/projects/SDL_mixer/ (Chọn phiên bản phù hợp với máy và dành cho nhà phát triển). Ví dụ:   SDL2_mixer-devel-2.0.4-mingw.tar.gz
+      o	SDL2_ttf : https://www.libsdl.org/projects/SDL_ttf/release/ (Chọn phiên bản phù hợp với máy và dành cho nhà phát triển). Ưu tiên chọn bản mới nhất, ví dụ:
 SDL2_ttf-devel-2.0.18-mingw.tar.gz
 
 
