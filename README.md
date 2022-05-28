@@ -55,7 +55,8 @@ III. Các chức năng
 * Sau khi chọn xong màn hình game chính sẽ xuất hiện để bắt đầu chơi.
 * Khi thua, bảng điểm sẽ được hiển thị và điểm sẽ được lưu vào Highscore. 
 * Màn hình sau khi thua được hiện với lời kết khác nhau tùy theo số điểm mà người chơi đạt được. Tại màn hình này người chơi có thể chọn trở về Menu “Restart” hoặc thoát game “Exit” bằng click.
-* Video: 
+* Video: 	
+* 
 IV. Kỹ thuật lập trình đã sử dụng
 * Mảng
 * Con trỏ/ Giải phóng bộ nhớ
