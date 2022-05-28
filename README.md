@@ -91,7 +91,7 @@ V. Kết luận
 
 * Qua thời gian làm game, em đã rút ra được cho bản thân rất nhiều bài học như:
 	+ Hiện nay thông tin về lập trình ở mức độ hiện tại trên các phương tiện thông tin, và mình cần phải tiếp cận được những nguồn kiến thức đó bằng cách nâng cao kĩ năng tìm kiếm thông tin, đặc biệt là các tài liệu tiếng Anh.
-	+ Giúp em hiểu rõ và thuần thục hơn trong việc sử dụng các thư viện nhưu SDL hay SDL_image
+	+ Giúp em hiểu rõ và thuần thục hơn trong việc sử dụng các thư viện như SDL, SDL_image, SDL_ttf, SDL_mixer.
 	+ Nếu như trước đây chỉ làm những bài tập nhỏ chỉ vài chục dòng code thì mình có thể sửa lỗi khá dễ dàng nhưng đến với những project bắt đầu phức tạp như lần này thì mình cần phải có sự sắp xếp mọi thứ gọn gàng dễ hiểu. Cá nhân em trong quá trình làm đã mất 12 tiếng liên tục làm việc chỉ để fix một cái lỗi siêu ngớ ngẩn và nguyên nhân là việc mình không sắp xếp thông tin một cách hợp lí. Vì vậy mình cần tạo sắp xếp một cách hợp lí trong lập trình từ cả những project nhỏ để có thể tạo thói quen tốt.
 	+ Ngôn ngữ trong lập trình không quá quan trọng, quan trọng là cách mình tư duy, cần hiểu vấn đề cặn kẽ và sử dụng các công cụ một cách hợp lý.
 * CREDIT: Em xin gửi lời cảm ơn tới các thầy đã giúp em có thể làm được dự án này:
