@@ -19,14 +19,16 @@ I. Hướng dẫn cài đặt:
 	  - SDL2_ttf : https://www.libsdl.org/projects/SDL_ttf/release/ (Chọn phiên bản phù hợp với máy và dành cho nhà phát triển). Ưu tiên chọn bản mới nhất, ví dụ: SDL2_ttf-devel-2.0.18-mingw.tar.gz
 * Thiết lập:
 	 + Giải nén các tệp thư viện, tìm mục “bin” trong các folder thư viện, copy đường dẫn.
-	 + Mở "Environment Valiables", nháy đúp chuột vào mục “Path”, ấn “New” và thêm đường dẫn vào các folder “bin” vào. Ví dụ: C:\Users\NGUYEN VIET HUNG\Desktop\DoHoa\SDL2-2.0.20\x86_64-w64-mingw32\bin
+	 + Mở "Environment Valiables", nháy đúp chuột vào mục “Path”, ấn “New” và thêm đường dẫn vào các folder “bin” vào. Ví dụ: C:\Users\NGUYEN VIET HUNG\Desktop\DoHoa\SDL2-2.0.20\x86_64-w64-mingw32\bin. 
 * Trong Codeblocks:
-	 + Vào Setting/Compile/Linker settings rồi dán "-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf" vào phần Other linker options
-	 + Vào Setting/Compile/Search directories/Complier. Nhấn add và thêm các thư mục “SDL2”.  
-	 + Vào Setting/Compile/Search directories/Linker. Nhấn add và thêm các thư mục “lib”.  
+	 + Vào Setting/Compile/Linker settings rồi dán "-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf" vào phần Other linker options. Ảnh minh họa: https://drive.google.com/file/d/140lHnSLK-KtmfTH6Y04-17WgK6eMIxIU/view?usp=sharing
+	 + Vào Setting/Compile/Search directories/Complier. Nhấn add và thêm các thư mục “SDL2”.  Ảnh minh họa: https://drive.google.com/file/d/10K1fA0e26JvFJSq35VV_EWIjNQUNUoKZ/view?usp=sharing
+	 + Vào Setting/Compile/Search directories/Linker. Nhấn add và thêm các thư mục “lib”.  Ảnh minh họa: https://drive.google.com/file/d/11FcQD3Ph6yWMXU_9vvyswtajASsOIPgt/view?usp=sharing
 	 + Nhấn OK để lưu.
 	 + Vào folder chứa Project đã giải nén mở file HungSnake.cbp để chạy project.
-	 + Nhấn chuột phải vào Project chọn “Build option” và tương tự trong setting của Codeblocks. 
+	 + Nhấn chuột phải vào Project chọn “Build option” và tương tự trong setting của Codeblocks. Ảnh minh họa: https://drive.google.com/file/d/1DhW959QFM8SuZmJqSuK7YNoK7nMj2fhz/view?usp=sharing
+	 + Cuối cùng, nhấn F9 hoặc ![image](https://user-images.githubusercontent.com/100114976/170826244-bb8604a6-25a1-433a-abc2-109d2e73b480.png) để chạy chương trình.
+
 *	Với VsCode:
 	 + Làm theo hướng dẫn này : https://pie-cheque-188.notion.site/C-i-t-h-a-C-Windows-ef0a99a8dcae4dae86a39dc1cbc35980 .
 	 + Cài đặt các thư viện như trong codeBlocks (cài tương tự như cài SDL trong link hướng dẫn ở trên)
@@ -55,7 +57,7 @@ III. Các chức năng
 * Sau khi chọn xong màn hình game chính sẽ xuất hiện để bắt đầu chơi.
 * Khi thua, bảng điểm sẽ được hiển thị và điểm sẽ được lưu vào Highscore. 
 * Màn hình sau khi thua được hiện với lời kết khác nhau tùy theo số điểm mà người chơi đạt được. Tại màn hình này người chơi có thể chọn trở về Menu “Restart” hoặc thoát game “Exit” bằng click.
-* Video: https://youtu.be/ilIzQFWzr7M	
+* Video: https://youtu.be/ilIzQFWzr7M	(Có âm thanh nhưng trình ghi âm không nhận được).
 * 
 IV. Kỹ thuật lập trình đã sử dụng
 * Mảng
