@@ -20,21 +20,21 @@ o	SDL2_image : https://www.libsdl.org/projects/SDL_image/ (Chọn phiên bản p
 o	SDL2_mixer : https://www.libsdl.org/projects/SDL_mixer/ (Chọn phiên bản phù hợp với máy và dành cho nhà phát triển). Ví dụ:   SDL2_mixer-devel-2.0.4-mingw.tar.gz
 o	SDL2_ttf : https://www.libsdl.org/projects/SDL_ttf/release/ (Chọn phiên bản phù hợp với máy và dành cho nhà phát triển). Ưu tiên chọn bản mới nhất, ví dụ: SDL2_ttf-devel-2.0.18-mingw.tar.gz
 +	Thiết lập:
-            - Giải nén các tệp thư viện, tìm mục “bin” trong các folder thư viện, copy đường dẫn.
-            - Mở "Environment Valiables", nháy đúp chuột vào mục “Path”, ấn “New” và thêm đường dẫn vào các folder “bin” vào. Ví dụ: C:\Users\NGUYEN VIET HUNG\Desktop\DoHoa\SDL2-2.0.20\x86_64-w64-mingw32\bin
-        +	Trong Codeblocks:
-            - Vào Setting/Compile/Linker settings rồi dán "-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf" vào phần Other linker options
-            - Vào Setting/Compile/Search directories/Complier. Nhấn add và thêm các thư mục “SDL2”.  
-            - Vào Setting/Compile/Search directories/Linker. Nhấn add và thêm các thư mục “lib”.  
-            - Nhấn OK để lưu.
-            - Vào folder chứa Project đã giải nén mở file HungSnake.cbp để chạy project.
-            - Nhấn chuột phải vào Project chọn “Build option” và tương tự trong setting của Codeblocks. 
-        +	Với VsCode:
-            - Làm theo hướng dẫn này : https://pie-cheque-188.notion.site/C-i-t-h-a-C-Windows-ef0a99a8dcae4dae86a39dc1cbc35980 .
-            - Cài đặt các thư viện như trong codeBlocks (cài tương tự như cài SDL trong link hướng dẫn ở trên)
-            - Trong "Makefile": all: g++ -Isrc/include -Lsrc/lib -o main main.cpp -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf
-    2.	Đối với hệ thống 64 bit: 
-        +	Tương tự như cách cài phiên bản x64(64bit)
+- Giải nén các tệp thư viện, tìm mục “bin” trong các folder thư viện, copy đường dẫn.
+- Mở "Environment Valiables", nháy đúp chuột vào mục “Path”, ấn “New” và thêm đường dẫn vào các folder “bin” vào. Ví dụ: C:\Users\NGUYEN VIET HUNG\Desktop\DoHoa\SDL2-2.0.20\x86_64-w64-mingw32\bin
++	Trong Codeblocks:
+- Vào Setting/Compile/Linker settings rồi dán "-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf" vào phần Other linker options
+- Vào Setting/Compile/Search directories/Complier. Nhấn add và thêm các thư mục “SDL2”.  
+- Vào Setting/Compile/Search directories/Linker. Nhấn add và thêm các thư mục “lib”.  
+- Nhấn OK để lưu.
+- Vào folder chứa Project đã giải nén mở file HungSnake.cbp để chạy project.
+- Nhấn chuột phải vào Project chọn “Build option” và tương tự trong setting của Codeblocks. 
++	Với VsCode:
+- Làm theo hướng dẫn này : https://pie-cheque-188.notion.site/C-i-t-h-a-C-Windows-ef0a99a8dcae4dae86a39dc1cbc35980 .
+- Cài đặt các thư viện như trong codeBlocks (cài tương tự như cài SDL trong link hướng dẫn ở trên)
+- Trong "Makefile": all: g++ -Isrc/include -Lsrc/lib -o main main.cpp -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf
+2.	Đối với hệ thống 64 bit: 
++	Tương tự như cách cài phiên bản x64(64bit)
 
 
 II. Mô tả chung
