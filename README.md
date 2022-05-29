@@ -21,7 +21,8 @@ I. Hướng dẫn cài đặt:
 		  - SDL : https://www.libsdl.org/release/SDL2-devel-2.0.20-mingw.tar.gz
 		  - SDL2_image : https://www.libsdl.org/projects/SDL_image/ (Chọn phiên bản phù hợp với máy và dành cho nhà phát triển). Ví dụ: SDL2_image-devel-2.0.5-mingw.tar.gz
 		  - SDL2_mixer : https://www.libsdl.org/projects/SDL_mixer/ (Chọn phiên bản phù hợp với máy và dành cho nhà phát triển). Ví dụ:   SDL2_mixer-devel-2.0.4-mingw.tar.gz
-	  - SDL2_ttf : https://www.libsdl.org/projects/SDL_ttf/release/ (Chọn phiên bản phù hợp với máy và dành cho nhà phát triển). Ưu tiên chọn bản mới nhất, ví dụ: SDL2_ttf-devel-2.0.18-mingw.tar.gz
+		  - SDL2_ttf : https://www.libsdl.org/projects/SDL_ttf/release/ (Chọn phiên bản phù hợp với máy và dành cho nhà phát triển). Ưu tiên chọn bản mới nhất, ví dụ: SDL2_ttf-devel-2.0.18-mingw.tar.gz
+	
 * Thiết lập:
 	 + Giải nén các tệp thư viện, tìm mục “bin” trong các folder thư viện, copy đường dẫn.
 	 + Mở "Environment Valiables", nháy đúp chuột vào mục “Path”, ấn “New” và thêm đường dẫn vào các folder “bin” vào. Ví dụ: C:\Users\NGUYEN VIET HUNG\Desktop\DoHoa\SDL2-2.0.20\x86_64-w64-mingw32\bin. 
