@@ -17,8 +17,9 @@ const int posX = 280;
 const int posY = 40;
 
 #undef main
-bool comp(const int a, const int b){
-   return a > b;
+bool tmp(const int x, const int y)
+{
+   return x > y;
 }
 void loadHighScore()
 {
@@ -30,7 +31,7 @@ void loadHighScore()
         Arr_Score.push_back(x);
     }*/
 
-    sort(ArrScore.begin(),ArrScore.end(),comp);
+    sort(ArrScore.begin(),ArrScore.end(),tmp);
 	SDL_Window* window = NULL;
 	SDL_Renderer* renderer = NULL;
 	bool isRunning = true;
