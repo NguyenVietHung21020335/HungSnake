@@ -425,7 +425,7 @@
 	<cstdlib>
 	"PlayGround.h"
 
-1653650906 source:c:\users\nguyen viet hung\desktop\hungsnake\main.cpp
+1653738015 source:c:\users\nguyen viet hung\desktop\hungsnake\main.cpp
 	<iostream>
 	<cstdlib>
 	<ctime>
@@ -483,7 +483,7 @@
 	<string>
 	"painter.h"
 
-1653670601 source:c:\users\nguyen viet hung\desktop\hungsnake\highscore.cpp
+1653914463 source:c:\users\nguyen viet hung\desktop\hungsnake\highscore.cpp
 	<stdio.h>
 	<SDL.h>
 	<SDL_ttf.h>
@@ -514,7 +514,7 @@
 	<string>
 	"painter.h"
 
-1653670227 source:c:\users\nguyen viet hung\desktop\hungsnake\score.cpp
+1653914533 source:c:\users\nguyen viet hung\desktop\hungsnake\score.cpp
 	<stdio.h>
 	<SDL.h>
 	<SDL_ttf.h>

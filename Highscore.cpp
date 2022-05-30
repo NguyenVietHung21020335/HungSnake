@@ -68,7 +68,7 @@ void loadHighScore()
     painter.clearWithBgColor(CYAN_COLOR );
 
     for(int i=0;i<=ArrScore.size();i++){
-        font = TTF_OpenFont("mono0755.ttf", 20);
+        font = TTF_OpenFont("highscoreFont.ttf", 20);
         SDL_Color fg = MEDIUMPURPLE3_COLOR;
         bool isRunning = true;
         stringstream ss;
@@ -82,8 +82,8 @@ void loadHighScore()
             getline(ss,text);
         }
         if(i==0){
-            fg = {0, 0, 0};
-            font = TTF_OpenFont("mono0755.ttf",30);
+            fg = Aquamarine1_COLOR;
+            font = TTF_OpenFont("highscoreFont.ttf",40);
         }
         if(i==1 || i==2 || i==3) fg={255,215,0};
         surface = TTF_RenderText_Solid(font, text.c_str(), fg);
@@ -139,10 +139,7 @@ void loadHighScore()
             SDL_RenderPresent(renderer);
             SDL_Delay(500);
             isRunning = false;
-
-
         }
-
     }
     SDL_Delay(2500);
 

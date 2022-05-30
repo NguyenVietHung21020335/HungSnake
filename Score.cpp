@@ -52,7 +52,7 @@ int loadScore()
 	}
 	Painter painter(window, renderer);
     painter.clearWithBgColor(AntiqueWhite_COLOR);
-	font = TTF_OpenFont("mono0755.ttf", sizeOfText);
+	font = TTF_OpenFont("scoreFont.ttf", sizeOfText);
 
 	SDL_Color fg =INDIANRED1_COLOR;
 
