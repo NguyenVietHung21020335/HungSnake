@@ -24,12 +24,6 @@ bool tmp(const int x, const int y)
 void loadHighScore()
 {
     vector<int> ArrScore=getArrScore();
-    /*ifstream file;
-    file.open("HighScore.txt");
-    int x;
-    while(file>>x){
-        Arr_Score.push_back(x);
-    }*/
 
     sort(ArrScore.begin(),ArrScore.end(),tmp);
 	SDL_Window* window = NULL;
@@ -46,7 +40,6 @@ void loadHighScore()
 		printf("Unable to initialize SDL %s\n", SDL_GetError());
 	}
 
-	//Initialize the truetype font API.
 	if (TTF_Init() < 0)
 	{
 		SDL_Log("%s", TTF_GetError());
