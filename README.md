@@ -88,7 +88,7 @@ V. Kết luận
 	+ Cho người chơi nhập tên
 	+ Bảng xếp hạng có tên người chơi
 	+ Thêm nhiều loại quả với các hiệu ứng và chức năng khác nhau.
-	+ Khắc phục sự thiếu xót của SDL như Scrolling ảnh, SDL_Delay chỉ nhận được số mili giây nguyên .
+	+ Khắc phục sự thiếu sót của SDL như Scrolling ảnh, SDL_Delay chỉ nhận được số mili giây nguyên .
 
 * Qua thời gian làm game, em đã rút ra được cho bản thân rất nhiều bài học như:
 	+ Hiện nay thông tin về lập trình ở mức độ hiện tại trên các phương tiện thông tin, và mình cần phải tiếp cận được những nguồn kiến thức đó bằng cách nâng cao kĩ năng tìm kiếm thông tin, đặc biệt là các tài liệu tiếng Anh.
